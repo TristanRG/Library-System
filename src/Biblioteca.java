@@ -106,6 +106,7 @@ public class Biblioteca {
         }
     }
 
+
     public void cautaMembru() {
         System.out.println("Introdu ID-ul membrului pe care doresti sa il cauti: ");
         String id = scanner.nextLine();
