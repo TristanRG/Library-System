@@ -2,6 +2,7 @@ package Elements;
 
 import Interface.IAbstractElemVisitor;
 import Interface.IComparare;
+import Visitors.NormalDisplayVisitor;
 
 public abstract class AbstractElem implements IComparare<String> {
     protected int id;
@@ -56,4 +57,11 @@ public abstract class AbstractElem implements IComparare<String> {
     }
 
     public abstract void Accept(IAbstractElemVisitor visitor);
+    @Override
+    public String toString() {
+        NormalDisplayVisitor visitor = new NormalDisplayVisitor();
+        this.Accept(visitor);
+        return visitor.getResult();
+    }
 }
+

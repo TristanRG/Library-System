@@ -52,7 +52,7 @@ public class Biblioteca {
     }
 
     public void adaugaElement() {
-        System.out.println("Ce element doresti sa creezi? (1 = Elements.Carte, 2 = Elements.Revista): ");
+        System.out.println("Ce element doresti sa creezi? (1 = Carte, 2 = Revista): ");
         int choice = scanner.nextInt();
         scanner.nextLine();
         ParamFactory factory;
@@ -91,11 +91,11 @@ public class Biblioteca {
 
         Membru membru = new Membru(membruID, nume, telefon, adresa);
         ListaMembri.getInstance().adaugaMembru(membru, listaMembri);
-        System.out.println("Elements.Membru adaugat cu succes!");
+        System.out.println("Membru adaugat cu succes!");
     }
 
     public void cautaElement() {
-        System.out.println("Introdu ID-ul elementului (Elements.Carte sau Elements.Revista) pe care doresti sa il cauti: ");
+        System.out.println("Introdu ID-ul elementului (Carte sau Revista) pe care doresti sa il cauti: ");
         String id = scanner.nextLine();
 
         IComparare<String> element = Catalog.getInstance().cautaElement(id, listaElemente);
@@ -105,7 +105,6 @@ public class Biblioteca {
             System.out.println("Nu exista niciun element cu acest ID.");
         }
     }
-
 
     public void cautaMembru() {
         System.out.println("Introdu ID-ul membrului pe care doresti sa il cauti: ");

@@ -5,6 +5,8 @@ import Elements.Revista;
 import Interface.IAbstractElemVisitor;
 
 public class NormalDisplayVisitor implements IAbstractElemVisitor {
+    private StringBuilder result = new StringBuilder();
+
     @Override
     public void Visit(Carte carte) {
         System.out.println("Carte: ID = " + carte.getId() +
@@ -22,4 +24,9 @@ public class NormalDisplayVisitor implements IAbstractElemVisitor {
                 ", Retineri = " + revista.getRetineri() +
                 ", Imprumutata = " + (revista.isImprumutata() ? "Da" : "Nu"));
     }
+
+    public String getResult() {
+        return result.toString();
+    }
 }
+
