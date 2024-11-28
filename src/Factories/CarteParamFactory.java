@@ -3,15 +3,11 @@ package Factories;
 import Elements.AbstractElem;
 import Elements.Carte;
 
-import java.util.Scanner;
-
 public class CarteParamFactory extends ParamFactory {
     private String autor;
 
-    @Override
-    protected void initializeSpecificParams(Scanner scanner) {
-        System.out.println("Introdu autorul cartii: ");
-        autor = scanner.nextLine();
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
     @Override

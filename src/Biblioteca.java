@@ -55,6 +55,7 @@ public class Biblioteca {
         System.out.println("Ce element doresti sa creezi? (1 = Carte, 2 = Revista): ");
         int choice = scanner.nextInt();
         scanner.nextLine();
+
         ParamFactory factory;
 
         switch (choice) {
@@ -69,11 +70,35 @@ public class Biblioteca {
                 return;
         }
 
-        factory.initializeParams(scanner);
+        System.out.println("Introdu ID-ul elementului: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.println("Introdu titlul elementului: ");
+        String titlu = scanner.nextLine();
+
+        factory.setId(id);
+        factory.setTitlu(titlu);
+
+        if (factory instanceof CarteParamFactory) {
+            CarteParamFactory carteFactory = (CarteParamFactory) factory;
+            System.out.println("Introdu autorul cartii: ");
+            String autor = scanner.nextLine();
+            carteFactory.setAutor(autor);
+        } else if (factory instanceof RevistaParamFactory) {
+            RevistaParamFactory revistaFactory = (RevistaParamFactory) factory;
+            System.out.println("Introdu numarul revistei: ");
+            int numar = scanner.nextInt();
+            scanner.nextLine();
+            revistaFactory.setNumar(numar);
+        }
+
         AbstractElem element = AbstractElemFactory.Instance().CreazaElemConcret(factory);
+
         Catalog.getInstance().adaugaElement(element, listaElemente);
         System.out.println("Element creat si adaugat cu succes!");
     }
+
 
     public void adaugaMembru() {
         System.out.println("Introdu ID-ul membrului: ");

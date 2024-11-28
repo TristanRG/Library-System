@@ -2,23 +2,17 @@ package Factories;
 
 import Elements.AbstractElem;
 
-import java.util.Scanner;
-
 public abstract class ParamFactory {
     protected int id;
     protected String titlu;
 
-    public void initializeParams(Scanner scanner) {
-        System.out.println("Introdu ID-ul elementului: ");
-        id = scanner.nextInt();
-        scanner.nextLine();
-
-        System.out.println("Introdu titlul elementului: ");
-        titlu = scanner.nextLine();
-
-        initializeSpecificParams(scanner);
+    public void setId(int id) {
+        this.id = id;
     }
 
-    protected abstract void initializeSpecificParams(Scanner scanner);
+    public void setTitlu(String titlu) {
+        this.titlu = titlu;
+    }
+
     public abstract AbstractElem createElem();
 }
