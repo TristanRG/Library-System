@@ -1,9 +1,6 @@
 import java.util.Scanner;
 
-import Elements.AbstractElem;
-import Elements.Carte;
-import Elements.Membru;
-import Elements.Revista;
+import Elements.*;
 import Factories.AbstractElemFactory;
 import Factories.CarteParamFactory;
 import Factories.ParamFactory;
@@ -52,17 +49,31 @@ public class Biblioteca {
     }
 
     public void adaugaElement() {
-        System.out.println("Ce element doresti sa creezi? (1 = Carte, 2 = Revista): ");
+        System.out.println("Selecteaza tipul elementului (1-8): ");
+        System.out.println("1 = Carte");
+        System.out.println("2 = Carte in Sala");
+        System.out.println("3 = Carte in Sala cu Taxa");
+        System.out.println("4 = Carte cu Taxa");
+        System.out.println("5 = Revista");
+        System.out.println("6 = Revista in Sala");
+        System.out.println("7 = Revista in Sala cu Taxa");
+        System.out.println("8 = Revista cu Taxa");
+
         int choice = scanner.nextInt();
         scanner.nextLine();
 
         ParamFactory factory;
-
         switch (choice) {
             case AbstractElemFactory.CARTE:
+            case AbstractElemFactory.CARTE_SALA:
+            case AbstractElemFactory.CARTE_SALA_TAXA:
+            case AbstractElemFactory.CARTE_TAXA:
                 factory = new CarteParamFactory();
                 break;
             case AbstractElemFactory.REVISTA:
+            case AbstractElemFactory.REVISTA_SALA:
+            case AbstractElemFactory.REVISTA_SALA_TAXA:
+            case AbstractElemFactory.REVISTA_TAXA:
                 factory = new RevistaParamFactory();
                 break;
             default:
@@ -85,7 +96,8 @@ public class Biblioteca {
             System.out.println("Introdu autorul cartii: ");
             String autor = scanner.nextLine();
             carteFactory.setAutor(autor);
-        } else if (factory instanceof RevistaParamFactory) {
+        }
+        else if (factory instanceof RevistaParamFactory) {
             RevistaParamFactory revistaFactory = (RevistaParamFactory) factory;
             System.out.println("Introdu numarul revistei: ");
             int numar = scanner.nextInt();
@@ -94,6 +106,24 @@ public class Biblioteca {
         }
 
         AbstractElem element = AbstractElemFactory.Instance().CreazaElemConcret(factory);
+
+        switch (choice) {
+            case AbstractElemFactory.CARTE_SALA:
+            case AbstractElemFactory.REVISTA_SALA:
+                element = new ElemInSala(element);
+                break;
+            case AbstractElemFactory.CARTE_SALA_TAXA:
+            case AbstractElemFactory.REVISTA_SALA_TAXA:
+                element = new ElemCuTaxa(new ElemInSala(element), 10);
+                break;
+            case AbstractElemFactory.CARTE_TAXA:
+            case AbstractElemFactory.REVISTA_TAXA:
+                System.out.println("Introdu taxa: ");
+                double taxa = scanner.nextDouble();
+                scanner.nextLine();
+                element = new ElemCuTaxa(element, taxa);
+                break;
+        }
 
         Catalog.getInstance().adaugaElement(element, listaElemente);
         System.out.println("Element creat si adaugat cu succes!");

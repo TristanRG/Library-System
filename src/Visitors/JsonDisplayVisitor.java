@@ -1,6 +1,8 @@
 package Visitors;
 
 import Elements.Carte;
+import Elements.ElemCuTaxa;
+import Elements.ElemInSala;
 import Elements.Revista;
 import Interface.IAbstractElemVisitor;
 
@@ -27,5 +29,21 @@ public class JsonDisplayVisitor implements IAbstractElemVisitor {
         System.out.println("  \"retineri\": " + revista.getRetineri() + ",");
         System.out.println("  \"imprumutata\": " + (revista.isImprumutata() ? "true" : "false"));
         System.out.println("}");
+    }
+
+    @Override
+    public void Visit(ElemCuTaxa elemCuTaxa) {
+        System.out.println("{");
+        System.out.println("  \"type\": \"ElemCuTaxa\",");
+        System.out.println("  \"taxa\": " + elemCuTaxa.getTaxa() + ",");
+        System.out.println("  \"element_decorat\": {");
+    }
+
+    @Override
+    public void Visit(ElemInSala elemInSala) {
+        System.out.println("{");
+        System.out.println("  \"type\": \"ElemInSala\",");
+        System.out.println("  \"in_sala\": true,");
+        System.out.println("  \"element_decorat\": {");
     }
 }

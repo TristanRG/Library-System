@@ -1,6 +1,8 @@
 package Visitors;
 
 import Elements.Carte;
+import Elements.ElemCuTaxa;
+import Elements.ElemInSala;
 import Elements.Revista;
 import Interface.IAbstractElemVisitor;
 
@@ -25,8 +27,17 @@ public class NormalDisplayVisitor implements IAbstractElemVisitor {
                 ", Imprumutata = " + (revista.isImprumutata() ? "Da" : "Nu"));
     }
 
+    @Override
+    public void Visit(ElemCuTaxa elemCuTaxa) {
+        result.append(" (Taxa: ").append(elemCuTaxa.getTaxa()).append(" RON)");
+    }
+
+    @Override
+    public void Visit(ElemInSala elemInSala) {
+        result.append(" (Doar pentru sala de lectura)");
+    }
+
     public String getResult() {
         return result.toString();
     }
 }
-

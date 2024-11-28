@@ -2,6 +2,9 @@ package Visitors;
 
 import Elements.Carte;
 import Elements.Revista;
+import Elements.ElemCuTaxa;
+import Elements.ElemInSala;
+
 import Interface.IAbstractElemVisitor;
 
 public class FormatAfisare implements IAbstractElemVisitor {
@@ -18,5 +21,20 @@ public class FormatAfisare implements IAbstractElemVisitor {
                 ", Numar=" + revista.getNumar() +
                 ", Imprumutata=" + (revista.isImprumutata() ? "Da" : "Nu") +
                 ", Retineri=" + revista.getRetineri());
+    }
+
+    @Override
+    public void Visit(ElemCuTaxa elemCuTaxa) {
+        System.out.println("Element Decorat cu Taxa: " +
+                "Taxa=" + elemCuTaxa.getTaxa() + ", " +
+                "Informatii Element Decorat: ");
+
+    }
+
+    @Override
+    public void Visit(ElemInSala elemInSala) {
+        System.out.println("Element Decorat in Sala: " +
+                "Elementul este in sala=" + ", " +
+                "Informatii Element Decorat: ");
     }
 }
