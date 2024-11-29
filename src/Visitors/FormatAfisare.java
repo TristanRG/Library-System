@@ -25,16 +25,17 @@ public class FormatAfisare implements IAbstractElemVisitor {
 
     @Override
     public void Visit(ElemCuTaxa elemCuTaxa) {
-        System.out.println("Element Decorat cu Taxa: " +
-                "Taxa=" + elemCuTaxa.getTaxa() + ", " +
-                "Informatii Element Decorat: ");
-
+        System.out.println("Element Decorat cu Taxa:");
+        System.out.println("  Taxa: " + elemCuTaxa.getTaxa() + " RON");
+        System.out.println("  Informatii Element Decorat:");
+        elemCuTaxa.getDecorat().Accept(this);
     }
 
     @Override
     public void Visit(ElemInSala elemInSala) {
-        System.out.println("Element Decorat in Sala: " +
-                "Elementul este in sala=" + ", " +
-                "Informatii Element Decorat: ");
+        System.out.println("Element Decorat in Sala:");
+        System.out.println("  Disponibil doar pentru sala de lectura.");
+        System.out.println("  Informatii Element Decorat:");
+        elemInSala.getDecorat().Accept(this);
     }
 }

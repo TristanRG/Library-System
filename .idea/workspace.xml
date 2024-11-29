@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="811a1af3-b3e9-4842-a31b-8b92c3ab4ca6" name="Changes" comment="Moved input handling from the factory classes to the biblioteca class">
-      <change afterPath="$PROJECT_DIR$/src/Elements/ElemCuTaxa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Elements/ElemDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Elements/ElemInSala.java" afterDir="false" />
+    <list default="true" id="811a1af3-b3e9-4842-a31b-8b92c3ab4ca6" name="Changes" comment="Added decorators for &quot;revista&quot; and &quot;carte&quot;, adapted the visitors and factory classes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Biblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Biblioteca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Factories/AbstractElemFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factories/AbstractElemFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/IAbstractElemVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/IAbstractElemVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/ElemDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/ElemDecorator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Visitors/FormatAfisare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitors/FormatAfisare.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Visitors/FunditaDisplayVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitors/FunditaDisplayVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Visitors/JsonDisplayVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitors/JsonDisplayVisitor.java" afterDir="false" />
@@ -121,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732828167589</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added decorators for &quot;revista&quot; and &quot;carte&quot;, adapted the visitors and factory classes.">
+      <option name="closed" value="true" />
+      <created>1732832731789</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732832731789</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -131,6 +134,7 @@
     <MESSAGE value="Test" />
     <MESSAGE value="Added ToString method to AbstractElem that makes use of the visitor" />
     <MESSAGE value="Moved input handling from the factory classes to the biblioteca class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved input handling from the factory classes to the biblioteca class" />
+    <MESSAGE value="Added decorators for &quot;revista&quot; and &quot;carte&quot;, adapted the visitors and factory classes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added decorators for &quot;revista&quot; and &quot;carte&quot;, adapted the visitors and factory classes." />
   </component>
 </project>

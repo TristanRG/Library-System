@@ -14,4 +14,8 @@ public abstract class ElemDecorator extends AbstractElem {
     public void Accept(IAbstractElemVisitor visitor) {
         elementDecorat.Accept(visitor);
     }
+
+    public AbstractElem getDecorat() {
+        return elementDecorat;
+    }
 }
