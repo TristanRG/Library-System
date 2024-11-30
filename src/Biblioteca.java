@@ -114,7 +114,10 @@ public class Biblioteca {
                 break;
             case AbstractElemFactory.CARTE_SALA_TAXA:
             case AbstractElemFactory.REVISTA_SALA_TAXA:
-                element = new ElemCuTaxa(new ElemInSala(element), 10);
+                System.out.println("Introdu taxa: ");
+                double taxaa = scanner.nextDouble();
+                scanner.nextLine();
+                element = new ElemCuTaxa(new ElemInSala(element), taxaa);
                 break;
             case AbstractElemFactory.CARTE_TAXA:
             case AbstractElemFactory.REVISTA_TAXA:
