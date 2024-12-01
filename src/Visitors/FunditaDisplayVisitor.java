@@ -35,25 +35,23 @@ public class FunditaDisplayVisitor implements IAbstractElemVisitor {
     }
 
     @Override
-    public void Visit(ElemCuTaxa elemCuTaxa) {
-        if (visited.contains(elemCuTaxa)) return;
-        visited.add(elemCuTaxa);
-        System.out.println("🎀Element Decorat cu Taxa: " +
-                " 🎀 Taxa=" + elemCuTaxa.getTaxa());
-        if (!(elemCuTaxa.getDecorat() instanceof ElemInSala)) {
-            System.out.println(" 🎀 Informatii Element Decorat: ");
-            elemCuTaxa.getDecorat().Accept(this);
-        }
-    }
-
-    @Override
     public void Visit(ElemInSala elemInSala) {
         if (visited.contains(elemInSala)) return;
         visited.add(elemInSala);
-        System.out.println(" 🎀 Disponibil doar pentru sala de lectura.");
-        if (!(elemInSala.getDecorat() instanceof ElemCuTaxa)) {
-            System.out.println(" 🎀 Informatii Element Decorat: ");
-            elemInSala.getDecorat().Accept(this);
-        }
+
+        elemInSala.getDecorat().Accept(this);
+
+        System.out.println("🎀 In Sala: True 🎀");
+    }
+
+    @Override
+    public void Visit(ElemCuTaxa elemCuTaxa) {
+        if (visited.contains(elemCuTaxa)) return;
+        visited.add(elemCuTaxa);
+
+        elemCuTaxa.getDecorat().Accept(this);
+
+        System.out.println("🎀 Taxa = " + elemCuTaxa.getTaxa() + " RON 🎀");
     }
 }
+

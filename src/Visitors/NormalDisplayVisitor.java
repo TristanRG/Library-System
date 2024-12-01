@@ -41,35 +41,28 @@ public class NormalDisplayVisitor implements IAbstractElemVisitor {
     }
 
     @Override
-    public void Visit(ElemCuTaxa elemCuTaxa) {
-        if (visited.contains(elemCuTaxa)) return;
-        visited.add(elemCuTaxa);
-
-        AbstractElem baseElem = elemCuTaxa.getDecorat();
-
-        System.out.println("Element decorat cu Taxa:");
-        System.out.println("  Taxa: " + elemCuTaxa.getTaxa() + " RON");
-
-        baseElem.Accept(this);
-    }
-
-    @Override
     public void Visit(ElemInSala elemInSala) {
         if (visited.contains(elemInSala)) return;
         visited.add(elemInSala);
-
         AbstractElem baseElem = elemInSala.getDecorat();
-
-        System.out.println("Disponibil doar pentru sala de lectura.");
-
-        if (baseElem instanceof ElemCuTaxa) {
-            System.out.println("Element decorat cu Taxa:");
-            System.out.println("  Taxa: " + ((ElemCuTaxa) baseElem).getTaxa() + " RON");
-        }
-
         baseElem.Accept(this);
+
+        String output = "In Sala: True";
+        System.out.println(output);
+        result.append(output).append("\n");
     }
 
+    @Override
+    public void Visit(ElemCuTaxa elemCuTaxa) {
+        if (visited.contains(elemCuTaxa)) return;
+        visited.add(elemCuTaxa);
+        AbstractElem baseElem = elemCuTaxa.getDecorat();
+        baseElem.Accept(this);
+
+        String output = "Taxa: " + elemCuTaxa.getTaxa() + " RON";
+        System.out.println(output);
+        result.append(output).append("\n");
+    }
 
     public String getResult() {
         return result.toString();

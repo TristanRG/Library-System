@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="811a1af3-b3e9-4842-a31b-8b92c3ab4ca6" name="Changes" comment="Improved logic between Decorators and Visitors">
+    <list default="true" id="811a1af3-b3e9-4842-a31b-8b92c3ab4ca6" name="Changes" comment="Added better logic towards using the visitors for an element that uses more than 1 decorators.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Biblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Biblioteca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Visitors/FormatAfisare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitors/FormatAfisare.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Visitors/FunditaDisplayVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitors/FunditaDisplayVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Visitors/JsonDisplayVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitors/JsonDisplayVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Visitors/NormalDisplayVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitors/NormalDisplayVisitor.java" afterDir="false" />
@@ -132,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732900899388</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added better logic towards using the visitors for an element that uses more than 1 decorators.">
+      <option name="closed" value="true" />
+      <created>1732985825511</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732985825512</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -144,6 +150,7 @@
     <MESSAGE value="Moved input handling from the factory classes to the biblioteca class" />
     <MESSAGE value="Added decorators for &quot;revista&quot; and &quot;carte&quot;, adapted the visitors and factory classes." />
     <MESSAGE value="Improved logic between Decorators and Visitors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved logic between Decorators and Visitors" />
+    <MESSAGE value="Added better logic towards using the visitors for an element that uses more than 1 decorators." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added better logic towards using the visitors for an element that uses more than 1 decorators." />
   </component>
 </project>

@@ -40,18 +40,17 @@ public class JsonDisplayVisitor implements IAbstractElemVisitor {
         System.out.println("}");
     }
 
+
     @Override
     public void Visit(ElemCuTaxa elemCuTaxa) {
         if (visited.contains(elemCuTaxa)) return;
         visited.add(elemCuTaxa);
+
         System.out.println("{");
         System.out.println("  \"type\": \"ElemCuTaxa\",");
         System.out.println("  \"taxa\": " + elemCuTaxa.getTaxa() + ",");
-        System.out.println("  \"element_decorat\": {");
-        if (!(elemCuTaxa.getDecorat() instanceof ElemInSala)) {
-            elemCuTaxa.getDecorat().Accept(this);
-        }
-        System.out.println("  }");
+        System.out.println("  \"element_decorat\": ");
+        elemCuTaxa.getDecorat().Accept(this);
         System.out.println("}");
     }
 
@@ -59,13 +58,12 @@ public class JsonDisplayVisitor implements IAbstractElemVisitor {
     public void Visit(ElemInSala elemInSala) {
         if (visited.contains(elemInSala)) return;
         visited.add(elemInSala);
+
         System.out.println("{");
         System.out.println("  \"type\": \"ElemInSala\",");
         System.out.println("  \"in_sala\": true,");
-        System.out.println("  \"element_decorat\": {");
-        if (!(elemInSala.getDecorat() instanceof ElemCuTaxa)) {
-            elemInSala.getDecorat().Accept(this);
-        }        System.out.println("  }");
+        System.out.println("  \"element_decorat\": ");
+        elemInSala.getDecorat().Accept(this);
         System.out.println("}");
     }
 }
