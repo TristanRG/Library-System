@@ -6,7 +6,7 @@ public class Main {
         Biblioteca biblioteca = Biblioteca.getInstance();
         int optiune = 0;
 
-        while (optiune != 8) {
+        while (optiune != 12) {
             System.out.println("1. Adauga element");
             System.out.println("2. Adauga membru");
             System.out.println("3. Cauta element");
@@ -14,7 +14,11 @@ public class Main {
             System.out.println("5. Afiseaza catalog si alege tip display");
             System.out.println("6. Sterge un element");
             System.out.println("7. Sterge un membru");
-            System.out.println("8. Exit");
+            System.out.println("8. Imprumuta element");
+            System.out.println("9. Returneaza element");
+            System.out.println("10. Anuleaza retinere");
+            System.out.println("11. Afiseaza tranzactii");
+            System.out.println("12. Exit");
             System.out.print("Alege o optiune: ");
 
             optiune = myObj.nextInt();
@@ -50,8 +54,25 @@ public class Main {
                     break;
 
                 case 8:
+                    biblioteca.imprumutaElement();
+                    break;
+
+                case 9:
+                    biblioteca.returneazaElement();
+                    break;
+
+                case 10:
+                    biblioteca.anuleazaRetinere();
+                    break;
+
+                case 11:
+                    biblioteca.getTranzactii();
+                    break;
+
+                case 12:
                     System.out.println("Iesire din meniu.");
                     break;
+
                 default:
                     System.out.println("Optiune invalida.");
                     break;

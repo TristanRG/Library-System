@@ -22,7 +22,7 @@ public class JsonDisplayVisitor implements IAbstractElemVisitor {
         System.out.println("  \"titlu\": \"" + carte.getTitlu() + "\",");
         System.out.println("  \"autor\": \"" + carte.getAutor() + "\",");
         System.out.println("  \"retineri\": " + carte.getRetineri() + ",");
-        System.out.println("  \"imprumutata\": " + (carte.isImprumutata() ? "true" : "false"));
+        System.out.println("  \"imprumutata\": " + (carte.isImprumutat() ? "true" : "false"));
         System.out.println("}");
     }
 
@@ -36,7 +36,7 @@ public class JsonDisplayVisitor implements IAbstractElemVisitor {
         System.out.println("  \"titlu\": \"" + revista.getTitlu() + "\",");
         System.out.println("  \"numar\": " + revista.getNumar() + ",");
         System.out.println("  \"retineri\": " + revista.getRetineri() + ",");
-        System.out.println("  \"imprumutata\": " + (revista.isImprumutata() ? "true" : "false"));
+        System.out.println("  \"imprumutata\": " + (revista.isImprumutat() ? "true" : "false"));
         System.out.println("}");
     }
 

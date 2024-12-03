@@ -11,7 +11,7 @@ public class FormatAfisare implements IAbstractElemVisitor {
     @Override
     public void Visit(Carte carte) {
         System.out.println("Carte: ID=" + carte.getId() + ", Titlu=" + carte.getTitlu() + ", Autor=" + carte.getAutor() +
-                ", Imprumutata=" + (carte.isImprumutata() ? "Da" : "Nu") +
+                ", Imprumutata=" + (carte.isImprumutat() ? "Da" : "Nu") +
                 ", Retineri=" + carte.getRetineri());
     }
 
@@ -19,7 +19,7 @@ public class FormatAfisare implements IAbstractElemVisitor {
     public void Visit(Revista revista) {
         System.out.println("Revista: ID=" + revista.getId() + ", Titlu=" + revista.getTitlu() +
                 ", Numar=" + revista.getNumar() +
-                ", Imprumutata=" + (revista.isImprumutata() ? "Da" : "Nu") +
+                ", Imprumutata=" + (revista.isImprumutat() ? "Da" : "Nu") +
                 ", Retineri=" + revista.getRetineri());
     }
 

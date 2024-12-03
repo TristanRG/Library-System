@@ -15,6 +15,10 @@ public class Membru implements IComparare<String> {
         this.adresa = adresa;
     }
 
+    public String getNume() {
+        return nume;
+    }
+
     @Override
     public boolean compara(String id) {
         return String.valueOf(this.ID).equals(id);

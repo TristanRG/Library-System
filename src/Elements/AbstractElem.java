@@ -29,7 +29,7 @@ public abstract class AbstractElem implements IComparare<String> {
         return retineri;
     }
 
-    public boolean isImprumutata() {
+    public boolean isImprumutat() {
         return imprumutata;
     }
 
@@ -37,7 +37,7 @@ public abstract class AbstractElem implements IComparare<String> {
         imprumutata = true;
     }
 
-    public void returneazaElemente() {
+    public void returneazaElement() {
         imprumutata = false;
     }
 

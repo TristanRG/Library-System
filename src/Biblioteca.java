@@ -1,4 +1,5 @@
-import java.util.Scanner;
+import java.time.LocalDate;
+import java.util.*;
 
 import Elements.*;
 import Factories.AbstractElemFactory;
@@ -10,6 +11,8 @@ import Interface.IAbstractElemVisitor;
 import Lists.Catalog;
 import Lists.ElemList;
 import Lists.ListaMembri;
+import Operations.Retinere;
+import Operations.Tranzactie;
 import Visitors.FunditaDisplayVisitor;
 import Visitors.NormalDisplayVisitor;
 import Visitors.JsonDisplayVisitor;
@@ -19,6 +22,8 @@ public class Biblioteca {
 
     private ElemList<IComparare<String>, String> listaElemente;
     private ElemList<IComparare<String>, String> listaMembri;
+    private List<Tranzactie> tranzactii = new ArrayList<>();
+    private Map<String, Retinere> retineri = new HashMap<>();
     private Scanner scanner;
 
     private Biblioteca() {
@@ -26,6 +31,7 @@ public class Biblioteca {
         listaMembri = new ElemList<>();
         scanner = new Scanner(System.in);
         initElementeInitiale();
+        initMembriInitiali();
     }
 
     public static Biblioteca getInstance() {
@@ -35,6 +41,13 @@ public class Biblioteca {
         return singleton;
     }
 
+    private void initMembriInitiali() {
+        Membru membru1 = new Membru(1, "Tristan", "072212321", "Posada");
+        Membru membru2 = new Membru(2, "Razvan", "072212321", "CevaSat");
+
+        ListaMembri.getInstance().adaugaMembru(membru1, listaMembri);
+        ListaMembri.getInstance().adaugaMembru(membru2, listaMembri);
+    }
     private void initElementeInitiale() {
         AbstractElem carte1 = new Carte(1, "Plumb", "Bacovia");
         AbstractElem carte2 = new Carte(2, "1984", "George Orwell");
@@ -96,8 +109,7 @@ public class Biblioteca {
             System.out.println("Introdu autorul cartii: ");
             String autor = scanner.nextLine();
             carteFactory.setAutor(autor);
-        }
-        else if (factory instanceof RevistaParamFactory) {
+        } else if (factory instanceof RevistaParamFactory) {
             RevistaParamFactory revistaFactory = (RevistaParamFactory) factory;
             System.out.println("Introdu numarul revistei: ");
             int numar = scanner.nextInt();
@@ -234,28 +246,108 @@ public class Biblioteca {
     }
 
 
-    public void adaugaRetinere() {
+    public void imprumutaElement() {
+        System.out.println("Introdu ID-ul membrului care doreste sa imprumute un element: ");
+        String idMembru = scanner.nextLine();
 
+        Membru membru = ListaMembri.getInstance().cautaMembru(idMembru, listaMembri);
+        if (membru == null) {
+            System.out.println("Nu exista niciun membru cu acest ID.");
+            return;
+        }
+
+        System.out.println("Introdu ID-ul elementului pe care doresti sa il imprumuti: ");
+        String idElement = scanner.nextLine();
+
+        AbstractElem element = (AbstractElem) Catalog.getInstance().cautaElement(idElement, listaElemente);
+        if (element == null) {
+            System.out.println("Nu exista niciun element cu acest ID.");
+            return;
+        }
+
+        if (element.isImprumutat()) {
+            Retinere retinere = retineri.computeIfAbsent(idElement, k -> new Retinere(element));
+            retinere.adaugaMembru(membru);
+            System.out.println("Elementul \"" + element.getTitlu() + "\" este deja imprumutat. Ai fost adaugat la lista de asteptare.");
+            return;
+        }
+
+        Tranzactie tranzactie = new Tranzactie(membru, element, LocalDate.now());
+        tranzactii.add(tranzactie);
+
+        element.imprumutaElemente();
+        System.out.println("Elementul \"" + element.getTitlu() + "\" a fost imprumutat cu succes de catre membrul: " + membru.getNume());
+    }
+
+
+    public void returneazaElement() {
+        System.out.println("Introdu ID-ul elementului pe care doresti sa il returnezi: ");
+        String idElement = scanner.nextLine();
+
+        AbstractElem element = (AbstractElem) Catalog.getInstance().cautaElement(idElement, listaElemente);
+        if (element == null) {
+            System.out.println("Nu exista niciun element cu acest ID.");
+            return;
+        }
+
+        if (!element.isImprumutat()) {
+            System.out.println("Elementul nu este imprumutat.");
+            return;
+        }
+
+        tranzactii.removeIf(tranzactie -> tranzactie.getElement().equals(element));
+
+        Retinere retinere = retineri.get(idElement);
+        if (retinere != null && retinere.areRetineri()) {
+            Membru urmatorMembru = retinere.obtineUrmatorulMembru();
+            if (urmatorMembru != null) {
+                Tranzactie tranzactie = new Tranzactie(urmatorMembru, element, LocalDate.now());
+                tranzactii.add(tranzactie);
+                System.out.println("Elementul \"" + element.getTitlu() + "\" a fost automat imprumutat membrului: " + urmatorMembru.getNume());
+                return;
+            }
+        }
+
+        element.returneazaElement();
+        System.out.println("Elementul \"" + element.getTitlu() + "\" a fost returnat cu succes.");
     }
 
     public void anuleazaRetinere() {
+        System.out.println("Introdu ID-ul membrului care doreste sa isi anuleze retinerea pentru un element: ");
+        String idMembru = scanner.nextLine();
 
+        Membru membru = ListaMembri.getInstance().cautaMembru(idMembru, listaMembri);
+        if (membru == null) {
+            System.out.println("Nu exista niciun membru cu acest ID.");
+            return;
+        }
+
+        System.out.println("Introdu ID-ul elementului pentru care doresti sa anulezi retinerea: ");
+        String idElement = scanner.nextLine();
+
+        AbstractElem element = (AbstractElem) Catalog.getInstance().cautaElement(idElement, listaElemente);
+        if (element == null) {
+            System.out.println("Nu exista niciun element cu acest ID.");
+            return;
+        }
+
+        Retinere retinere = retineri.get(idElement);
+        if (retinere == null || !retinere.areRetineri()) {
+            System.out.println("Elementul nu are nicio retinere activa.");
+            return;
+        }
+
+        retinere.anuleazaRetinere(membru);
+        System.out.println("Retinerea pentru \"" + element.getTitlu() + "\" a fost anulata cu succes.");
     }
 
-    public void imprumutaElement() {
 
-    }
-
-
-    public void returneazaCarte() {
-
-    }
-
-
-    public void getCartiImprumutate() {
-
+    public void getTranzactii() {
+        System.out.println("Lista tranzactiilor active (elemente imprumutate):");
+        for (Tranzactie tranzactie : tranzactii) {
+            System.out.println("Element: " + tranzactie.getElement().getTitlu() +
+                    " | Imprumutat de: " + tranzactie.getMembru().getNume());
+        }
     }
 }
 
-
-//GetTranzactii

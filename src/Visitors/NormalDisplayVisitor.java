@@ -22,7 +22,7 @@ public class NormalDisplayVisitor implements IAbstractElemVisitor {
                 ", Titlu = " + carte.getTitlu() +
                 ", Autor = " + carte.getAutor() +
                 ", Retineri = " + carte.getRetineri() +
-                ", Imprumutata = " + (carte.isImprumutata() ? "Da" : "Nu");
+                ", Imprumutata = " + (carte.isImprumutat() ? "Da" : "Nu");
         System.out.println(output);
         result.append(output).append("\n");
     }
@@ -35,7 +35,7 @@ public class NormalDisplayVisitor implements IAbstractElemVisitor {
                 ", Titlu = " + revista.getTitlu() +
                 ", Numar = " + revista.getNumar() +
                 ", Retineri = " + revista.getRetineri() +
-                ", Imprumutata = " + (revista.isImprumutata() ? "Da" : "Nu");
+                ", Imprumutata = " + (revista.isImprumutat() ? "Da" : "Nu");
         System.out.println(output);
         result.append(output).append("\n");
     }

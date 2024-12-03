@@ -31,6 +31,12 @@ public class Retinere {
         return !listaDeAsteptare.isEmpty();
     }
 
+    public void anuleazaRetinere(Membru membru) {
+        listaDeAsteptare.remove(membru);
+        element.scadeRetinere();
+    }
+
+
     public AbstractElem getElement() {
         return element;
     }

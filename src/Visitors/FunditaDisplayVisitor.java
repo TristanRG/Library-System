@@ -20,7 +20,7 @@ public class FunditaDisplayVisitor implements IAbstractElemVisitor {
                 " 🎀 Titlu = " + carte.getTitlu() +
                 " 🎀 Autor = " + carte.getAutor() +
                 " 🎀 Retineri = " + carte.getRetineri() +
-                " 🎀 Imprumutata = " + (carte.isImprumutata() ? "Da 🎀" : "Nu 🎀"));
+                " 🎀 Imprumutata = " + (carte.isImprumutat() ? "Da 🎀" : "Nu 🎀"));
     }
 
     @Override
@@ -31,7 +31,7 @@ public class FunditaDisplayVisitor implements IAbstractElemVisitor {
                 " 🎀 Titlu = " + revista.getTitlu() +
                 " 🎀 Numar = " + revista.getNumar() +
                 " 🎀 Retineri = " + revista.getRetineri() +
-                " 🎀 Imprumutata = " + (revista.isImprumutata() ? "Da 🎀" : "Nu 🎀"));
+                " 🎀 Imprumutata = " + (revista.isImprumutat() ? "Da 🎀" : "Nu 🎀"));
     }
 
     @Override
