@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="811a1af3-b3e9-4842-a31b-8b92c3ab4ca6" name="Changes" comment="Added better logic towards using the visitors for an element that uses more than 1 decorators.">
+    <list default="true" id="811a1af3-b3e9-4842-a31b-8b92c3ab4ca6" name="Changes" comment="Further improved the visitor logic by simplifying their interactions with decorators">
+      <change afterPath="$PROJECT_DIR$/src/Operations/Retinere.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Operations/Tranzactie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Visitors/FunditaDisplayVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitors/FunditaDisplayVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Visitors/JsonDisplayVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitors/JsonDisplayVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Visitors/NormalDisplayVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitors/NormalDisplayVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Biblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Biblioteca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,21 +43,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/trist/IdeaProjects/Biblioteca/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/trist/IdeaProjects/Biblioteca",
+    "onboarding.tips.debug.path": "C:/Users/trist/IdeaProjects/Biblioteca/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "terminal"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -138,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732985825512</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Further improved the visitor logic by simplifying their interactions with decorators">
+      <option name="closed" value="true" />
+      <created>1733090546114</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733090546114</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -151,6 +161,7 @@
     <MESSAGE value="Added decorators for &quot;revista&quot; and &quot;carte&quot;, adapted the visitors and factory classes." />
     <MESSAGE value="Improved logic between Decorators and Visitors" />
     <MESSAGE value="Added better logic towards using the visitors for an element that uses more than 1 decorators." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added better logic towards using the visitors for an element that uses more than 1 decorators." />
+    <MESSAGE value="Further improved the visitor logic by simplifying their interactions with decorators" />
+    <option name="LAST_COMMIT_MESSAGE" value="Further improved the visitor logic by simplifying their interactions with decorators" />
   </component>
 </project>

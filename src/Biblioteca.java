@@ -233,114 +233,29 @@ public class Biblioteca {
         }
     }
 
-    /*
+
     public void adaugaRetinere() {
-        System.out.println("Introdu ID-ul membrului care doreste sa rezerve o carte: ");
-        String membruID = scanner.nextLine();
 
-        Elements.Membru membru = Lists.ListaMembri.getInstance().cautaMembru(membruID, listaMembri);
-        if (membru == null) {
-            System.out.println("Nu exista niciun membru cu acest ID.");
-            return;
-        }
-
-        System.out.println("Introdu ID-ul cartii pe care doresti sa o rezervi: ");
-        String carteID = scanner.nextLine();
-
-        Elements.Carte carte = Lists.Catalog.getInstance().cautaCarte(carteID, lista);
-        if (carte == null) {
-            System.out.println("Nu exista nicio carte cu acest ID.");
-            return;
-        }
-
-        carte.adaugaRetinere();
-        System.out.println("Cartea a fost rezervata cu succes!");
     }
 
-    /*
     public void anuleazaRetinere() {
-        System.out.println("Introdu ID-ul membrului care doreste sa anuleze o rezervare: ");
-        String membruID = scanner.nextLine();
 
-        Elements.Membru membru = Lists.ListaMembri.getInstance().cautaMembru(membruID, lista);
-        if (membru == null) {
-            System.out.println("Nu exista niciun membru cu acest ID.");
-            return;
-        }
-
-        System.out.println("Introdu ID-ul cartii pentru care doresti sa anulezi rezervarea: ");
-        String carteID = scanner.nextLine();
-
-        Elements.Carte carte = Lists.Catalog.getInstance().cautaCarte(carteID, lista);
-        if (carte == null) {
-            System.out.println("Nu exista nicio carte cu acest ID.");
-            return;
-        }
-
-        if (carte.getRetineri() > 0) {
-            carte.scadeRetinere();
-            System.out.println("Rezervarea a fost anulata cu succes!");
-        } else {
-            System.out.println("Cartea nu are nicio rezervare activa.");
-        }
     }
 
-     */
     public void imprumutaElement() {
-        System.out.println("Introdu ID-ul elementului pe care doresti sa il imprumuti: ");
-        String id = scanner.nextLine();
 
-        IComparare<String> element = Catalog.getInstance().cautaElement(id, listaElemente);
-        if (element instanceof Carte) {
-            Carte carte = (Carte) element;
-            if (!carte.isImprumutata()) {
-                carte.imprumutaElemente();
-                System.out.println("Cartea a fost imprumutata cu succes!");
-            } else {
-                System.out.println("Cartea este deja imprumutata.");
-            }
-        } else {
-            System.out.println("Doar cartile pot fi imprumutate.");
-        }
     }
-}
-/*
+
+
     public void returneazaCarte() {
-        System.out.println("Introdu ID-ul cartii pe care doresti sa o returnezi");
-        String carteID = scanner.nextLine();
 
-        Elements.Carte carte = Lists.Catalog.getInstance().cautaCarte(carteID, lista);
-        if (carte == null) {
-            System.out.println("Nu exista nicio carte cu acest ID.");
-            return;
-        }
-        if (carte.isImprumutata() == true) {
-            carte.returneazaElemente();
-            System.out.println("Cartea a fost returnata cu succes!");
-        } else {
-            System.out.println("Cartea nu este imprumutata.");
-        }
     }
 
-    /*
-    public void getCartiImprumutate() {
-        boolean existaCartiImprumutate = false;
 
-        System.out.println("Lista cartilor imprumutate: ");
-        for (IComparare<String> elem : lista) {
-            if (elem instanceof Elements.Carte) {
-                Elements.Carte carte = (Elements.Carte) elem;
-                if (carte.isImprumutata()) {
-                    System.out.println(carte);
-                    existaCartiImprumutate = true;
-                }
-            }
-        }
-        if (!existaCartiImprumutate) {
-            System.out.println("Nu exista carti imprumutate.");
-        }
+    public void getCartiImprumutate() {
+
     }
 }
 
-*/
+
 //GetTranzactii

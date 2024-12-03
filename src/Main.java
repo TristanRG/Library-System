@@ -14,7 +14,7 @@ public class Main {
             System.out.println("5. Afiseaza catalog si alege tip display");
             System.out.println("6. Sterge un element");
             System.out.println("7. Sterge un membru");
-            System.out.println(("8. Exit"));
+            System.out.println("8. Exit");
             System.out.print("Alege o optiune: ");
 
             optiune = myObj.nextInt();
