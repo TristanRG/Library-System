@@ -19,6 +19,10 @@ public class Retinere {
         element.adaugaRetinere();
     }
 
+    public Queue<Membru> getListaDeAsteptare() {
+        return listaDeAsteptare;
+    }
+
     public Membru obtineUrmatorulMembru() {
         Membru urmator = listaDeAsteptare.poll();
         if (urmator != null) {

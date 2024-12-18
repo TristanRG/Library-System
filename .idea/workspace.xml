@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="811a1af3-b3e9-4842-a31b-8b92c3ab4ca6" name="Changes" comment="Added &quot;Retinere&quot; and &quot;Tranzactie&quot; for handling tranzaction and retentions between the members and elements">
+    <list default="true" id="811a1af3-b3e9-4842-a31b-8b92c3ab4ca6" name="Changes" comment="Added the final changes to be able to borrow, return, retain, cancel a retention and show the list of borrowed elements, through the help of a HashMap, a linked list for the waiting list and OOP principles. The library system is now fully functional.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Biblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Biblioteca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elements/AbstractElem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/AbstractElem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elements/Membru.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Membru.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Operations/Retinere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operations/Retinere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Visitors/FormatAfisare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitors/FormatAfisare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Visitors/FunditaDisplayVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitors/FunditaDisplayVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Visitors/JsonDisplayVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitors/JsonDisplayVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Visitors/NormalDisplayVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitors/NormalDisplayVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733253159346</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added the final changes to be able to borrow, return, retain, cancel a retention and show the list of borrowed elements, through the help of a HashMap, a linked list for the waiting list and OOP principles. The library system is now fully functional.">
+      <option name="closed" value="true" />
+      <created>1733259255293</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1733259255293</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -176,6 +178,7 @@
     <MESSAGE value="Added better logic towards using the visitors for an element that uses more than 1 decorators." />
     <MESSAGE value="Further improved the visitor logic by simplifying their interactions with decorators" />
     <MESSAGE value="Added &quot;Retinere&quot; and &quot;Tranzactie&quot; for handling tranzaction and retentions between the members and elements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added &quot;Retinere&quot; and &quot;Tranzactie&quot; for handling tranzaction and retentions between the members and elements" />
+    <MESSAGE value="Added the final changes to be able to borrow, return, retain, cancel a retention and show the list of borrowed elements, through the help of a HashMap, a linked list for the waiting list and OOP principles. The library system is now fully functional." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the final changes to be able to borrow, return, retain, cancel a retention and show the list of borrowed elements, through the help of a HashMap, a linked list for the waiting list and OOP principles. The library system is now fully functional." />
   </component>
 </project>

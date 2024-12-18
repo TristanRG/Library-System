@@ -6,7 +6,7 @@ public class Main {
         Biblioteca biblioteca = Biblioteca.getInstance();
         int optiune = 0;
 
-        while (optiune != 12) {
+        while (optiune != 14) {
             System.out.println("1. Adauga element");
             System.out.println("2. Adauga membru");
             System.out.println("3. Cauta element");
@@ -18,7 +18,9 @@ public class Main {
             System.out.println("9. Returneaza element");
             System.out.println("10. Anuleaza retinere");
             System.out.println("11. Afiseaza tranzactii");
-            System.out.println("12. Exit");
+            System.out.println("12. Procesare retinere");
+            System.out.println("13. Verifica retinere");
+            System.out.println("14. Exit");
             System.out.print("Alege o optiune: ");
 
             optiune = myObj.nextInt();
@@ -46,11 +48,11 @@ public class Main {
                     break;
 
                 case 6:
-                    biblioteca.stergeElement();
+                    biblioteca.eliminaElement();
                     break;
 
                 case 7:
-                    biblioteca.stergeMembru();
+                    biblioteca.eliminaMembru();
                     break;
 
                 case 8:
@@ -58,11 +60,11 @@ public class Main {
                     break;
 
                 case 9:
-                    biblioteca.returneazaElement();
+                    biblioteca.returneazaRetinere();
                     break;
 
                 case 10:
-                    biblioteca.anuleazaRetinere();
+                    biblioteca.eliminaRetinere();
                     break;
 
                 case 11:
@@ -70,6 +72,14 @@ public class Main {
                     break;
 
                 case 12:
+                    biblioteca.procesareRetinere();
+                    break;
+
+                case 13:
+                    biblioteca.verificaRetineri();
+                    break;
+
+                case 14:
                     System.out.println("Iesire din meniu.");
                     break;
 

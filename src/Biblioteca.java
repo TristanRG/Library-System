@@ -221,7 +221,7 @@ public class Biblioteca {
         }
     }
 
-    public void stergeElement() {
+    public void eliminaElement() {
         System.out.println("Introdu ID-ul elementului (carte sau revista) pe care doresti sa il elimini: ");
         String id = scanner.nextLine();
 
@@ -233,7 +233,7 @@ public class Biblioteca {
         }
     }
 
-    public void stergeMembru() {
+    public void eliminaMembru() {
         System.out.println("Introdu ID-ul membrului pe care doresti sa il elimini: ");
         String id = scanner.nextLine();
 
@@ -280,7 +280,7 @@ public class Biblioteca {
     }
 
 
-    public void returneazaElement() {
+    public void returneazaRetinere() {
         System.out.println("Introdu ID-ul elementului pe care doresti sa il returnezi: ");
         String idElement = scanner.nextLine();
 
@@ -312,7 +312,7 @@ public class Biblioteca {
         System.out.println("Elementul \"" + element.getTitlu() + "\" a fost returnat cu succes.");
     }
 
-    public void anuleazaRetinere() {
+    public void eliminaRetinere() {
         System.out.println("Introdu ID-ul membrului care doreste sa isi anuleze retinerea pentru un element: ");
         String idMembru = scanner.nextLine();
 
@@ -347,6 +347,44 @@ public class Biblioteca {
         for (Tranzactie tranzactie : tranzactii) {
             System.out.println("Element: " + tranzactie.getElement().getTitlu() +
                     " | Imprumutat de: " + tranzactie.getMembru().getNume());
+        }
+    }
+
+    public void verificaRetineri() {
+        System.out.println("Introdu ID-ul elementului pentru care doresti sa verifici retinerile: ");
+        String idElement = scanner.nextLine();
+
+        AbstractElem element = (AbstractElem) Catalog.getInstance().cautaElement(idElement, listaElemente);
+        if (element == null) {
+            System.out.println("Nu exista niciun element cu acest ID.");
+            return;
+        }
+
+        Retinere retinere = retineri.get(idElement);
+        if (retinere != null && retinere.areRetineri()) {
+            System.out.println("Elementul \"" + element.getTitlu() + "\" are " +
+                    retinere.getListaDeAsteptare().size() + " retineri active.");
+        } else {
+            System.out.println("Elementul \"" + element.getTitlu() + "\" nu are nicio retinere activa.");
+        }
+    }
+
+
+    public void procesareRetinere() {
+        System.out.println("Elementele care au retineri active dar nu sunt imprumutate:");
+
+        boolean found = false;
+        for (Retinere retinere : retineri.values()) {
+            AbstractElem element = retinere.getElement();
+            if (!element.isImprumutat() && retinere.areRetineri()) {
+                found = true;
+                System.out.println("Element: " + element.getTitlu() +
+                        " | Numar de retineri: " + retinere.getListaDeAsteptare().size());
+            }
+        }
+
+        if (!found) {
+            System.out.println("Nu exista elemente cu retineri active care nu sunt imprumutate.");
         }
     }
 }
