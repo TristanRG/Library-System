@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="811a1af3-b3e9-4842-a31b-8b92c3ab4ca6" name="Changes" comment="Added the final changes to be able to borrow, return, retain, cancel a retention and show the list of borrowed elements, through the help of a HashMap, a linked list for the waiting list and OOP principles. The library system is now fully functional.">
+    <list default="true" id="811a1af3-b3e9-4842-a31b-8b92c3ab4ca6" name="Changes" comment="Added methods to process a borrowed element and verify if an element is borrowed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Biblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Biblioteca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Membru.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Membru.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factories/AbstractElemFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factories/AbstractElemFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Operations/Retinere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operations/Retinere.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,22 +43,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/trist/IdeaProjects/Biblioteca",
-    "onboarding.tips.debug.path": "C:/Users/trist/IdeaProjects/Biblioteca/src/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "terminal"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/trist/IdeaProjects/Biblioteca&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/trist/IdeaProjects/Biblioteca/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -163,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733259255293</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added methods to process a borrowed element and verify if an element is borrowed">
+      <option name="closed" value="true" />
+      <created>1734540777301</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1734540777301</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -179,6 +188,7 @@
     <MESSAGE value="Further improved the visitor logic by simplifying their interactions with decorators" />
     <MESSAGE value="Added &quot;Retinere&quot; and &quot;Tranzactie&quot; for handling tranzaction and retentions between the members and elements" />
     <MESSAGE value="Added the final changes to be able to borrow, return, retain, cancel a retention and show the list of borrowed elements, through the help of a HashMap, a linked list for the waiting list and OOP principles. The library system is now fully functional." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the final changes to be able to borrow, return, retain, cancel a retention and show the list of borrowed elements, through the help of a HashMap, a linked list for the waiting list and OOP principles. The library system is now fully functional." />
+    <MESSAGE value="Added methods to process a borrowed element and verify if an element is borrowed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added methods to process a borrowed element and verify if an element is borrowed" />
   </component>
 </project>

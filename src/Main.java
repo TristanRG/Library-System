@@ -6,7 +6,7 @@ public class Main {
         Biblioteca biblioteca = Biblioteca.getInstance();
         int optiune = 0;
 
-        while (optiune != 14) {
+        while (optiune != 15) {
             System.out.println("1. Adauga element");
             System.out.println("2. Adauga membru");
             System.out.println("3. Cauta element");
@@ -20,7 +20,8 @@ public class Main {
             System.out.println("11. Afiseaza tranzactii");
             System.out.println("12. Procesare retinere");
             System.out.println("13. Verifica retinere");
-            System.out.println("14. Exit");
+            System.out.println("14. Plaseaza retinere");
+            System.out.println("15. Exit");
             System.out.print("Alege o optiune: ");
 
             optiune = myObj.nextInt();
@@ -60,7 +61,7 @@ public class Main {
                     break;
 
                 case 9:
-                    biblioteca.returneazaRetinere();
+                    biblioteca.returnareElement();
                     break;
 
                 case 10:
@@ -80,6 +81,10 @@ public class Main {
                     break;
 
                 case 14:
+                    biblioteca.plasareRetinere();
+                    break;
+
+                case 15:
                     System.out.println("Iesire din meniu.");
                     break;
 

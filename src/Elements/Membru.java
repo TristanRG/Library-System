@@ -31,4 +31,8 @@ public class Membru implements IComparare<String> {
                 "Telefon: " + telefon + "\n" +
                 "Adresa: " + adresa;
     }
+
+    public int getId() {
+        return ID;
+    }
 }

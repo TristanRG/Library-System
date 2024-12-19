@@ -24,6 +24,7 @@ public class AbstractElemFactory {
     }
 
     public AbstractElem CreazaElemConcret(ParamFactory factory) {
+
         return factory.createElem();
     }
 }
